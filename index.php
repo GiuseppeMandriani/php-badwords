@@ -12,31 +12,71 @@
 
     <!-- Creazione Variabile -->
     <?php
+
     // Dichiarazione Variabile
     $paragraph = 'Suspendisse potenti. Donec sit amet lacus scelerisque, aliquet lacus nec, pulvinar dui. Curabitur eget porttitor diam, ut maximus nunc. Donec accumsan diam sit amet aliquet gravida. Aenean tincidunt diam in sagittis placerat. Morbi dolor lacus, suscipit vel elementum a, dignissim ac metus. Pellentesque dignissim convallis lectus, sed bibendum tortor tristique eget. Proin tortor tellus, condimentum eget bibendum eget, aliquam sit amet orci. Donec nec cursus orci, sed imperdiet nibh. Donec tincidunt lorem tortor, ut vulputate elit vestibulum non. Morbi hendrerit dictum tempor. Maecenas aliquam, mauris sit amet mollis tempus, tortor ipsum lobortis nibh, ac aliquet lectus augue at enim. Morbi posuere sapien sed purus pellentesque, id tempus urna mattis. Vestibulum imperdiet justo non orci tincidunt, sed sagittis sapien vulputate';
+    
 
+    // Lunghezza stringa 
+
+    $length = strlen($paragraph);
+
+    // METODO NO QUERY STRING
+
+
+
+    // Parola da modificare  
+
+    $replaced = str_replace('tortor','***', $paragraph);
+
+    // Posizione parola nascosta
+
+    $word = strpos($paragraph, 'tortor')
 
     ?>
 
+    <h2>Paragrafo per esercizio</h2>
+    <p><?php echo $paragraph; ?></p>
+    <p>Il Paragrafo contiene <?php echo $length; ?> caratteri.</p>
+    <p><?php echo $replaced; ?></p>
+    <p><?php echo $word; ?></p>
+
+
+    <!-- METODO QUERY STRING -->
 
 
 
+    <!-- GET Data from Query String -->
 
-
-
-    <!-- Esercizi Prove -->
-
-    <h2>Prove di php</h2>
-
-    <!-- Esempio Statico -->
     <?php
-    #Creazione variabile
-    $name = 'Giuseppe Mandriani';
-    $age = 32;
-    $status = true;
+    // GET Data from Query String
+
+    // Prendo valori assegnati all'url nella query string
+
+    // Global Array
+
+    $word = $_GET['badword'];       // $_GET Nativo nell'array metterò i parametri utilizzati nella query string
+
+    echo $_GET['badword'] ;    // Mostra la tipologia
+
+    $replacedTwo = str_replace($word ,'***', $paragraph);
+
     ?>
 
-    <h3>Welcome, Sono <?php echo $name; ?> ho <?php echo $age; ?> anni</h3>
+    <p><?php echo $replacedTwo; ?></p>
+
+
+    <a href="./esercizi_prova.php">vai a Esercizi di prova</a>
+
+
+
+
+
+
+
+
+
+
 
 
 
