@@ -26,20 +26,27 @@
 
 
     // Parola da modificare  
+    $parolaDaNascondere = 'tortor';
 
-    $replaced = str_replace('tortor','***', $paragraph);
+    // $replaced = str_replace('tortor','***', $paragraph);
+    $replaced = str_replace($parolaDaNascondere,'***', $paragraph);
 
     // Posizione parola nascosta
 
-    $word = strpos($paragraph, 'tortor')
+    $position = strpos($paragraph, 'tortor')
 
     ?>
 
     <h2>Paragrafo per esercizio</h2>
+
+    <h3>Paragrafo completo</h3>
     <p><?php echo $paragraph; ?></p>
     <p>Il Paragrafo contiene <?php echo $length; ?> caratteri.</p>
+
+    <h3>Paragrafo con parole nascoste metodo no query</h3>
     <p><?php echo $replaced; ?></p>
-    <p><?php echo $word; ?></p>
+    <p> Posizione <?php echo $position; ?></p>
+    <p> Parola nascosta:  <?php echo $parolaDaNascondere; ?></p>
 
 
     <!-- METODO QUERY STRING -->
@@ -55,14 +62,17 @@
 
     // Global Array
 
-    $word = $_GET['badword'];       // $_GET Nativo nell'array metterò i parametri utilizzati nella query string
+    $wordTwo = $_GET['badword'];       // $_GET Nativo nell'array metterò i parametri utilizzati nella query string
 
     echo $_GET['badword'] ;    // Mostra la tipologia
 
-    $replacedTwo = str_replace($word ,'***', $paragraph);
+    $replacedTwo = str_replace($wordTwo ,'***', $paragraph);
 
     ?>
 
+
+    <h3>Paragrafo parole nascosto metodo query (nell'url aggiungere ?badword=(parola che si desidera nascondere))</h3>
+    <p>Parola che si vuole nascondere: <?php echo $wordTwo; ?> </p>
     <p><?php echo $replacedTwo; ?></p>
 
 
