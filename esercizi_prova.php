@@ -78,6 +78,24 @@
     <p><?php echo $replaced;?></p>
 
 
+
+    <!-- VAR DUMP              Serve per dati più strutturati Array, Object  -->   
+
+    <?php
+    $my_arr = ['Giuseppe', 'Michele', 'Aldo'];
+
+    // Visualizzare elementi array a schermo
+
+    var_dump($my_arr);      // MEtodo in linea
+
+
+    echo '<pre>';
+    var_dump($my_arr);      // Maniera più ordinata
+    echo '</pre>';
+
+    ?>
+
+
     
 </body>
 </html>
